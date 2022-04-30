@@ -11,7 +11,9 @@ members:
   - George
   - Tyler
   - Kim
+  - alias
   - Gamora
   - Nebula
-  
+  - Stash
+
   fetch: this
