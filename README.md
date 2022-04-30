@@ -48,8 +48,9 @@
 
 <details>
 <summary>Local</summary>
-<div markdown="1">       
+<div markdown="1">
 
+![img.png](images/1.png)
 - 워크스페이스에 git 세팅
     - ```git init```
 - stage에 올리기
