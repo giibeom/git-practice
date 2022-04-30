@@ -138,6 +138,31 @@
 <summary>Git Repository</summary>
 <div markdown="1">       
 
+- git 원격 저장소 추가
+    - ```git remote add origin {원격 저장소 주소}```
+- 기본 브랜치명을 main으로 변경
+    - ```git branch -M main```
+- 원격에 push
+    - ```git push -u origin main```
+    - -u : 현재 브랜치와 명시된 원격 브랜치를 default로 연결
+- 원격 저장소에 commit 내역 밀어올리기
+    - ```git push```
+- 원격의 commit 내역 당겨오기
+    - ```git pull```
+- push 할 시 pull 하는 두가지 방법
+    - merge 방식
+        - ```git pull --no-rebase```
+    - rebase 방식
+        - ```git pull --rebase```
+    - pull이 완료된 후 push 진행
+- 로컬의 commit 내역으로 강제 push
+    - ```git push --force```
+- 원격의 변경사항 업데이트
+    - ```git fetch```
+- 로컬에 동일한 이름의 브랜치를 생성, 연결하여 switch
+    - ```git switch -t origin/{브랜치명}```
+- 원격 브랜치 삭제
+    - ```git push {원격이름} --delete {원격의 브랜치명}```
 
 </div>
 </details>
