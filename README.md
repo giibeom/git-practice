@@ -44,3 +44,69 @@
 
 </div>
 </details>
+
+
+<details>
+<summary>Local</summary>
+<div markdown="1">       
+
+- 워크스페이스에 git 세팅
+    - ```git init```
+- stage에 올리기
+    - ```git add {파일명}```
+- 모든 파일 stage에 올리기
+    - ```git add .```
+- commit
+    - 일반 커밋
+        - vi 모드 → 메시지 입력후 종료(:wq!) 시 커밋진행
+        - [IntelliJ vi 모드 입력 닫기(esc) 안될 시 설정방법](https://sw-architect.tistory.com/20)
+    - 커밋메시지 입력과 동시에 커밋
+        - ```git commit -m {”커밋메시지”}```
+    - add+commit (untracked 파일이 없을 시)
+        - ```git commit -am {“메시지”}```
+- git 상태 확인
+    - ```git status```
+- git 상태 자세히 확인
+    - ```git diff```
+    - 터미널 창이 충분하지 않을 경우 읽기모드로 들어감
+        
+        
+        | 작업 | Vi 명령어 | 상세 |
+        | --- | --- | --- |
+        | 위로 스크롤 | k | git log등에서 내역이 길 때 사용 |
+        | 아래로 스크롤 | j | git log등에서 내역이 길 때 사용 |
+        | 끄기 | :q | :가 입력되어 있으므로 q만 눌러도 됨|
+- Reset
+    - Local Repository → Staging area
+        - ```git reset --soft```
+    - Local Repository → Working directory (default)
+        - ```git reset```
+        - ```git reset --mixed```
+    - 수정사항 완전히 삭제
+        - ```git reset --hard```
+- Revert
+    - default
+        - ```git revert {되돌릴 커밋해시}```
+    - commit 하지 않고 revert
+        - ```git revert --no-commit {되돌릴 커밋해시}```
+
+</div>
+</details>
+
+
+<details>
+<summary>Branch</summary>
+<div markdown="1">       
+
+
+</div>
+</details>
+
+
+<details>
+<summary>Git Repository</summary>
+<div markdown="1">       
+
+
+</div>
+</details>
