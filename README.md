@@ -98,7 +98,38 @@
 <summary>Branch</summary>
 <div markdown="1">       
 
-
+ - 브랜치 생성
+    - ```git branch {브랜치명}```
+- 브랜치 목록 확인
+    - ```git branch```
+- 브랜치 이동
+    - ```git switch {브랜치명}```
+    - ```git checkout {브랜치명}```
+        - git 2.23 버전부터 checkout이 분리됨
+        1. switch
+        2. restore
+- 브랜치 생성과 동시에 이동
+    - ```git switch -c {브랜치명}```
+    - ```git checkout -b {브랜치명}```
+- 브랜치 삭제
+    - ```git branch -d {브랜치명}```
+- 브랜치명 변경
+    - ```git branch -m {기존 브랜치명} {새 브랜치명}```
+- 브랜치 합치기
+    - merge
+        - ```git merge {합쳐질 브랜치명}```
+    - merge 중단
+        - ```git merge --abort```
+    - rebase
+        1. ```git switch {합쳐질 브랜치명}```
+        2. ```git rebase {합칠 브랜치명}```
+        3. ```git merge {합친 브랜치명}```
+        합친 브랜치의 헤드를 merge를 통하여 가지 끝까지로 이동
+    - rebase 중단
+        - ```git rebase --abort```
+    - 충돌 한건 수정 후 stage에 올리고 계속 진행
+        - ```git rebase --continue ```
+ 
 </div>
 </details>
 
