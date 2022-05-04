@@ -1,10 +1,16 @@
 # 제대로 파는 Git & GitHub - by 얄코
 
 #### 해당 강의의 개념 메모는 블로그에 올릴예정이므로, 본 글에는 Git 명령어를 정리해 볼 생각이다.
+
+
 <br>
 
+
 ### 강의링크
+
 - [강의 바로가기](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83)
+
+
 <br>
 
 
