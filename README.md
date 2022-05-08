@@ -40,6 +40,7 @@
 
   - 줄바꿈 호환 문제 해결 (윈도우: true / 맥: input)
       - ```git config --global core.autocrlf true```
+  
   - pull 기본 전략 선택 (merge or rebase)
       - ```git config pull.rebase false``` → merge 방식
       - ```git config pull.rebase true``` → rebase 방식
@@ -47,6 +48,9 @@
   - Git 단축키 설정
       - ```git config --global alias.(지정할 단축키) “명령어”```
       - ex) git config --global alias.cam “commit -am”
+  
+  - push 시 로컬과 동일한 브랜치명 설정
+    - ```git config --global push.default current```
 
 </div>
 </details>
