@@ -1,6 +1,6 @@
 # 제대로 파는 Git & GitHub - by 얄코
 
-#### 해당 강의의 개념 메모는 블로그에 올릴예정이므로, 본 글에는 Git 명령어를 정리해 볼 생각이다.
+#### 해당 강의의 개념 메모는 블로그에 올릴예정이므로, 본 글에는 Commit 컨벤션 및 Git 명령어를 정리해 볼 생각이다.
 
 
 <br>
@@ -13,6 +13,45 @@
 
 <br>
 
+
+## 커밋 메시지 컨벤션
+```
+type : subject
+
+body (optional)
+...
+...
+...
+
+footer (optional)
+```
+- **Type**
+  - feat: 새로운 기능 추가
+  - fix: 버그 수정
+  - docs:	문서 수정
+  - style:	공백, 세미콜론 등 스타일 수정
+  - refactor:	코드 리팩토링
+  - perf:	성능 개선
+  - test:	테스트 추가
+  - chore:	빌드 과정 또는 보조 기능(문서 생성기능 등) 수정
+- **Subject** : 커밋의 작업 내용 간략히 설명
+  -  최대 50글자가 넘지 않도록 하고 마침표 생략
+  -  영문으로 표기하는 경우 동사(원형)를 가장 앞에 두고 첫 글자는 대문자로 표기
+- **Body** : 길게 설명할 필요가 있을 시 작성
+  - 어떻게 했는지가 아니라, 무엇을 했는지 또는 왜 했는지를 작성
+  - 한줄당 72자 내로 작성
+- **Footer**
+  -  Breaking Point가 있을 때
+  -  특정 이슈에 대한 해결 작업일 때
+
+#### 커밋 컨벤션 예시 (with [gitmoji](https://gitmoji.dev/))
+```
+✨ 추가 로그인 API (#1)
+
+로그인 API 개발
+
+Ref: #777
+```
 
 ## 강의에서 메모한 Git 명령어들 모음
 
@@ -59,8 +98,7 @@
 <details>
 <summary>Local</summary>
 <div markdown="1">
-
-![img.png](images/1.png)
+  
 - 워크스페이스에 git 세팅
     - ```git init```
 - stage에 올리기
@@ -75,6 +113,8 @@
         - ```git commit -m {”커밋메시지”}```
     - add+commit (untracked 파일이 없을 시)
         - ```git commit -am {“메시지”}```
+    - 커밋메시지 변경
+      - ```git commit --amend -m 'Add members to Panthers and Pumas'```
 - git 상태 확인
     - ```git status```
 - git 상태 자세히 확인
@@ -87,19 +127,6 @@
         | 위로 스크롤 | k | git log등에서 내역이 길 때 사용 |
         | 아래로 스크롤 | j | git log등에서 내역이 길 때 사용 |
         | 끄기 | :q | :가 입력되어 있으므로 q만 눌러도 됨|
-- Reset
-    - Local Repository → Staging area
-        - ```git reset --soft```
-    - Local Repository → Working directory (default)
-        - ```git reset```
-        - ```git reset --mixed```
-    - 수정사항 완전히 삭제
-        - ```git reset --hard```
-- Revert
-    - default
-        - ```git revert {되돌릴 커밋해시}```
-    - commit 하지 않고 revert
-        - ```git revert --no-commit {되돌릴 커밋해시}```
 
 </div>
 </details>
@@ -140,6 +167,10 @@
         - ```git rebase --abort```
     - 충돌 한건 수정 후 stage에 올리고 계속 진행
         - ```git rebase --continue ```
+- 로컬에 동일한 이름의 브랜치를 생성, 연결하여 switch
+    - ```git switch -t origin/{브랜치명}```
+- 원격 브랜치 삭제
+    - ```git push {원격이름} --delete {원격의 브랜치명}```
  
 </div>
 </details>
@@ -170,10 +201,61 @@
     - ```git push --force```
 - 원격의 변경사항 업데이트
     - ```git fetch```
-- 로컬에 동일한 이름의 브랜치를 생성, 연결하여 switch
-    - ```git switch -t origin/{브랜치명}```
-- 원격 브랜치 삭제
-    - ```git push {원격이름} --delete {원격의 브랜치명}```
+
+</div>
+</details>
+
+
+<details>
+<summary>Stash</summary>
+<div markdown="1">       
+
+  - 변경사항 보관
+    - ```git stash```
+  - 변경사항 적용
+    - pop : apply + drop
+    - ```git stash pop```
+  - 변경사항 일부 보관
+    - ```git stash -p```
+  - 메시지와 함께 보관
+    - ```git stash -m '스태시 테스트'```
+  - 스태시 목록 보기
+    - ```git stash list```
+
+</div>
+</details>
+
+
+<details>
+<summary>Change File</summary>
+<div markdown="1">       
+
+![img.png](images/1.png)
+  
+  - Working directory 내의 특정 파일 복구
+    - ```git restore {파일명}```
+  - Working directory 내 모든 파일 복구
+    - ```git restore . ```
+  - 변경상태를 스테이지에서 워킹 디렉토리로 돌려놓기
+    - Stage -> unStage
+    - ```git restore --staged {파일명}```
+  - 파일을 특정 커밋 상태로 되돌리기
+    - ```git restore --source={헤드 또는 커밋해시} {파일명}```
+  
+  - Reset
+    - Local Repository → Staging area
+        - ```git reset --soft```
+    - Local Repository → Working directory (default)
+        - ```git reset```
+        - ```git reset --mixed```
+    - 수정사항 완전히 삭제
+        - ```git reset --hard```
+- Revert
+    - default
+        - ```git revert {되돌릴 커밋해시}```
+    - commit 하지 않고 revert
+        - ```git revert --no-commit {되돌릴 커밋해시}```
+
 
 </div>
 </details>
