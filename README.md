@@ -309,4 +309,52 @@ Ref: #777
 </details>
 
 
+<details>
+<summary>Branch Deep Dive</summary>
+<div markdown="1">       
+
+
+- 다른 브랜치의 원하는 커밋 **복제**하여 가져오기 (cherry-pick)
+    - `git cherry-pick {따올 커밋의 해시}`
+- 다른 브랜치에서 파생된 브랜치 **옮겨붙이기** (rebase --onto)
+    - `git rebase --onto {옮겨붙일 브랜치} {이동할 브랜치의 파생된 브랜치} {이동할 브랜치}`
+- 다른 커밋들을 하나로 묶어 가져오기 (squash)
+    - `git merge --squash {대상 브랜치}`
+    
+--- 
+### 3-way merge vs Fast-forword
+
+![img.png](images/fastForword_vs_3wayMerge.jpg)
+
+
+| 3-way merge | Fast-forward |
+| --- | --- |
+| 병합되는 모양새 | 하나로 합쳐지는 모양새 (rebase와 비슷) |
+| 요약: 가지가 나눠지는 뿌리 + 본 브랜치 + 분기 브랜치 | 요약: 본 브랜치의 헤드를 이동시킨다 |
+| 사용 시점: 브랜치를 공유하여 협업하는 상황에서는 무조건 이 방식을 사용, 병합 기록을 남겨야 할 상황에 사용 | 사용 시점: 두 브랜치가 공통 커밋을 조상으로 갖고 있고, 한쪽 브랜치에만 이후 커밋이 있는경우 병합을 위한 다른 커밋이 필요 없을때 사용 |
+| 단점: 병합을 위한 다른 커밋이 필요 없는 경우엔 불필요한 커밋 하나가 추가된다. | 단점: 작업 후 어떤 브랜치를 사용한지, 언제 병합했는지 기록이 전혀 남지 않음 |
+
+
+
+### Gitflow
+
+![img.png](images/gitflow.png)
+
+| 브랜치 | 용도 |
+| --- | --- |
+|main|제품 출시/배포|
+|develop|다음 출시/배포를 위한 개발 진행|
+|release|출시/배포 전 테스트 진행(QA)|
+|feature|기능 개발|
+|hotfix|긴급한 버그 수정|
+
+</div>
+</details>
+
+
+
+
+
+
+
 
