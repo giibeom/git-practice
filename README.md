@@ -230,7 +230,7 @@ Ref: #777
 <summary>Change File</summary>
 <div markdown="1">       
 
-![img.png](images/1.png)
+![img.png](images/git_3space.png)
   
   - Working directory 내의 특정 파일 복구
     - ```git restore {파일명}```
@@ -259,3 +259,54 @@ Ref: #777
 
 </div>
 </details>
+
+<details>
+<summary>Tag & Release</summary>
+<div markdown="1">       
+
+**Local**
+- 마지막 커밋에 태그 생성
+    - `git tag v2.0.0`
+- 특정 커밋에 태그 생성
+    - `git tag {태그명} {커밋 해시} -m {메시지}`
+    - ex) `git tag v2.0.0 -m '자진모리 버전'`
+- 태그 삭제
+  - `git tag -d {태그명}`
+- 태그 목록 보기
+  - `git tag`
+- 특정 태그 보기
+  - `git show {태그명}`
+- 원하는 패턴으로 태그목록 보기
+    - `git tag -l '{패턴}''`
+    - ex) `git tag -l 'v1.*'`
+
+**원격**
+- 로컬의 모든 태그 원격으로 올리기
+    - `git push --tags`
+- 특정 태그 원격에 올리기
+    - `git push {원격명} {태그명}`
+- 특정 태그 원격에서 삭제
+    - `git push --delete {원격명} {태그명}`
+    
+
+**릴리즈 버전**
+```
+📢 릴리즈 버전 유형
+    v 2 . 0 . 0
+     주   부  수
+-----------------------------------------------------
+     주 : 기존 버전과 호환되지 않게 API가 바뀔 때
+     부 : 기존 버전과 호환되면서 새로운 기능을 추가할 때
+     수 : 기존 버전과 호환되면서 버그를 수정할 때 
+``` 
+**릴리즈 방법**
+
+![img.png](images/git_release.jpg)
+1. GitHub에서 태그 목록 이동
+2. Create release
+3. Title & Describe 작성 후 Publish release
+</div>
+</details>
+
+
+
