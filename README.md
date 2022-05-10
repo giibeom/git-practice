@@ -380,13 +380,17 @@ Ref: #777
 </details>
 
 
-
 <details>
 <summary>Submodules</summary>
 <div markdown="1">       
 
 - 메인프로젝트에 서브모듈 추가하기
     - `git submodule add (submodule의 GitHub 레포지토리 주소) (하위폴더명, 없을 시 생략)`
+- 다른곳에서 메인프로젝트 클론 할 시 서브모듈 사용법
+    1. `git submodule init {특정 서브모듈 지정시 해당 이름}`
+    2. `git submodule update`
+- 서브모듈 원격저장소 변경사항 업데이트
+    - `git submodule update --remote`
 
 </div>
 </details>
