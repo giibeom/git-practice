@@ -381,4 +381,12 @@ Ref: #777
 
 
 
+<details>
+<summary>Submodules</summary>
+<div markdown="1">       
 
+- 메인프로젝트에 서브모듈 추가하기
+    - `git submodule add (submodule의 GitHub 레포지토리 주소) (하위폴더명, 없을 시 생략)`
+
+</div>
+</details>
